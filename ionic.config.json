@@ -1,0 +1,7 @@
+{
+  "name": "Peliculas_Cesar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
