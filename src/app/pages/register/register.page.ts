@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
 import { AlertController } from '@ionic/angular';
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { environment } from "../../../environments/environment";
+import { Observable } from "rxjs";
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
+
 export class RegisterPage implements OnInit {
   formRegister: FormGroup
   constructor(public fb: FormBuilder, public alertController: AlertController) {

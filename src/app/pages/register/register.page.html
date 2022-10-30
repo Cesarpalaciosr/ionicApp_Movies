@@ -13,31 +13,24 @@
         <ion-card-title>Register</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <form [formGroup]= "formRegister">
+        <form [formGroup]= "formRegister" (ngSubmit)="submitReg()">
           <ion-item>
             <ion-label position = "floating">Name</ion-label>
             <ion-input formControlName="name"></ion-input>
           </ion-item>
-        </form>
-        <form [formGroup]= "formRegister">
           <ion-item>
             <ion-label position = "floating">Username</ion-label>
             <ion-input formControlName="username"></ion-input>
           </ion-item>
-        </form>
-        <form [formGroup]= "formRegister">
+        
           <ion-item>
             <ion-label position = "floating">email</ion-label>
             <ion-input formControlName="email"></ion-input>
           </ion-item>
-        </form>
-        <form [formGroup]= "formRegister">
           <ion-item>
             <ion-label position = "floating">Password</ion-label>
             <ion-input formControlName="passw" type="password"></ion-input>
           </ion-item>
-        </form>
-        <form [formGroup]= "formRegister">
           <ion-item>
             <ion-label position = "floating">confirm Password</ion-label>
             <ion-input formControlName="confirmPassw" type="password"></ion-input>
