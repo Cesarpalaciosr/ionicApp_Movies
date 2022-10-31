@@ -24,8 +24,8 @@ const routes: Routes = [
     // canActivate:[LoggedGuard]
   },
   {
-    path: 'movie-details',
-    loadChildren: () => import('./pages/movie-detials/movie-detials.module').then( m => m.MovieDetialsPageModule),
+    path: 'feed/:id',
+    loadChildren: () => import('./pages/movie-datails/movie-datails.module').then( m => m.MovieDatailsPageModule),
     // canActivate:[LoggedGuard]
   },
 ];
