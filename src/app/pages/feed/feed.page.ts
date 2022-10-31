@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
 import { environment } from '../../../environments/environment';
 import { MovieService } from '../../services/getapi.service';
@@ -17,10 +18,18 @@ export class FeedPage implements OnInit {
  
   constructor(
     private getapiService: MovieService,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private router:Router,
   ) {}
  
   ngOnInit() {
+    const user = localStorage.getItem('User')
+    if (user == null) {
+      this.router.navigateByUrl('/login',{replaceUrl:true})
+      console.log(user);
+      
+    }
+    console.log(JSON.parse(user));
     this.loadMovies();
   }
  

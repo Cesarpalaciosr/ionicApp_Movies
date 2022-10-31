@@ -1,27 +1,30 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { environment } from '../../../environments/environment';
+import { MovieService } from '../../services/getapi.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  username: string
+  password: string
 
-  formLogin: FormGroup
-
-  constructor(public fb: FormBuilder, public alertController: AlertController) {
-    this.formLogin = this.fb.group({
-      'name': new FormControl("", Validators.required),
-      'passw': new FormControl("", Validators.required)
-    })
+  constructor(private http: HttpClient,private router: Router,public alertController: AlertController) {
    }
 
-   async sendlog(){
-     console.log("sendlog");
-     var f = this.formLogin.value;
+     async sendlog(){
+     let credentials = {
+      username: this.username,
+      password:this.password
+     }
 
-     if (this.formLogin.invalid) {
+     if (credentials == null) {
         const alert = await this.alertController.create({
           message: 'Datos invalidos vuelve a ingresarlos',
           buttons: ['OK']
@@ -30,14 +33,25 @@ export class LoginPage implements OnInit {
         await alert.present();
         return;
      }
-
-     var user = {
-      name: f.name,
-      passw: f.passw
+     console.log(credentials);
+     console.log(credentials.username);
+     
+    //  token = this.req_token();
+    //  this.http.post(`${environment.baseUrl}/authentication/${token}}/validate_with_login`,credentials).subscribe(res =>{
+        // console.log(res);
+        
+    //  },error=>{
+        // console.log(error);
+        
+    //  } )
+    // localStorage.setItem('user',JSON.stringify(user))
+    
+  }
+    async req_token(){
+      var token =  this.http.get(`${environment.baseUrl}/authentication/token/new?api_key=${environment.apiKey}`)
+      console.log(token); 
+      
     }
-
-    localStorage.setItem('user',JSON.stringify(user))
-   }
   ngOnInit() {
   }
 

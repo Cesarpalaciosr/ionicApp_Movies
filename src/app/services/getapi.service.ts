@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
+
 export interface ApiResult {
   page: number;
   results: any[];
@@ -27,4 +28,5 @@ export class MovieService {
       `${environment.baseUrl}/movie/${id}?api_key=${environment.apiKey}`
     );
   }
+
 }

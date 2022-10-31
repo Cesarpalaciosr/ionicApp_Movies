@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   apiKey:'4b1e46a6a44002b19081362f282cb905',
   baseUrl:'https://api.themoviedb.org/3',
+  urlgenerate:'https://api.themoviedb.org',
   images:'http://image.tmdb.org/t/p'
 };
 

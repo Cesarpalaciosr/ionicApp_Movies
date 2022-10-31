@@ -6,7 +6,7 @@ import { NoLoggedGuard } from './no-logged.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./pages/feed/feed.module').then(m => m.FeedPageModule)
   },
   {
     path: 'login',
