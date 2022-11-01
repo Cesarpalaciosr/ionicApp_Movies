@@ -1,14 +1,11 @@
-     <ion-header>
-        <ion-toolbar color="dark">
-          <ion-title>Login</ion-title>
-        </ion-toolbar>
-     </ion-header>
-
-     <ion-content class="ion-padding">
-        <ion-item>
+     <ion-content class="ion-padding ion-text-center">
+      <div class="img">
+        <img src="../../../assets/images/squirtle.png">
+      </div>
+        <ion-item lines="none">
            <ion-input [(ngModel)]= "username"placeholder="username" type="text"></ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item lines="none">
            <ion-input [(ngModel)]= "password" placeholder="password" type="password"></ion-input>
         </ion-item>
         <ion-button color = "dark" expand ="block" (click)="sendlog()">
