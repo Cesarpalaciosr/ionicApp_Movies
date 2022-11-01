@@ -24,7 +24,7 @@ const routes: Routes = [
     // canActivate:[LoggedGuard]
   },
   {
-    path: 'feed/:id',
+    path: ':id',
     loadChildren: () => import('./pages/movie-datails/movie-datails.module').then( m => m.MovieDatailsPageModule),
     // canActivate:[LoggedGuard]
   },

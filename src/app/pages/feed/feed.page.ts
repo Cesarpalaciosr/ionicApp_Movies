@@ -23,13 +23,13 @@ export class FeedPage implements OnInit {
   ) {}
  
   ngOnInit() {
-    const user = localStorage.getItem('User')
-    if (user == null) {
+    const token = localStorage.getItem('request_token')
+    if (token == null) {
       this.router.navigateByUrl('/login',{replaceUrl:true})
-      console.log(user);
+      console.log(token);
       
     }
-    console.log(JSON.parse(user));
+    console.log(JSON.parse(token));
     this.loadMovies();
   }
  
